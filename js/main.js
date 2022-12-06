@@ -9,6 +9,9 @@ createApp({
     //   mi creo un array vuoto che posso popolare
       eMail : [],
 
+      // mi creo il numero di mail che voglio generare
+      numEmail : 10,
+
     }
   },
 
@@ -17,7 +20,7 @@ createApp({
     // creo randoEmail per popolare l'array
     randoMail(){
         // creo nil ciclo per stamparmi la mail 10 volte
-        for(let i = 0; i < 10; i++){
+        for(let i = 0; i < this.numEmail; i++){
 
             // mi richiamo axios
             axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
@@ -27,7 +30,7 @@ createApp({
             
             // richiamo le mail generate automaticamente
             this.mail = result.data.response
-            
+            console.log(this.mail);
             // pusho la mail creato nell'array
             this.eMail.push(this.mail)
             });
