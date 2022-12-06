@@ -11,7 +11,8 @@
     <div id="app">
         <h1>lista mail</h1>
         <ul>
-            <li>{{mail}}</li>
+            <!-- inserisco un ciclo per ciclare sull'array delle mail ed il show per farle comparire una volta arrivate alla lunghezza totale dell'array-->
+            <li v-for="mail in eMail" v-show="eMail.length">{{mail}}</li>
         </ul>
         
     </div>
